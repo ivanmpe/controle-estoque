@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form #f="ngForm" (submit)="form_login(f)" >
+  <ion-item>
+    <ion-label >E-mail</ion-label>
+    <ion-input type="text" value="" required ngModel name= "email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label  >Senha</ion-label>
+    <ion-input type="password" required ngModel name="password" ></ion-input>
+  </ion-item>
+  <button ion-button full color="default">Entrar</button>
+  <button ion-button full color="secondary" (click)="paginaCadastro()">Cadastrar</button>
+  </form>
+</ion-content>
