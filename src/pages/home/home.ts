@@ -22,7 +22,7 @@ export class HomePage {
 
   presentToast() {
     let toast = this.toastCtrl.create({
-      message: ' Verifique senha e email. ',
+      message: 'Verifique senha e email. ',
       duration: 3000
     });
     toast.present();
