@@ -1,3 +1,24 @@
 page-home {
 
 }
+
+.bg{
+    background-color: #353535;
+
+}
+.formulario{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.logon{
+    width: 100%;
+    background-color: #488aff;
+}
+
+.register{
+    width: 100%;
+    background-color: #38AC37;
+}

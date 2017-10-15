@@ -12,7 +12,7 @@ import {AngularFireModule} from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {FormsModule} from '@angular/forms';
 import { CadastroPage} from '../pages/cadastro/cadastro';
-
+import {PagetabsPage} from '../pages/pagetabs/pagetabs';
 
 var config = {
    apiKey: "AIzaSyBnUP7i0PHO6AhxTZ8-fPuA8M8sFZn2vt4",
@@ -27,7 +27,8 @@ var config = {
    declarations: [
      MyApp,
      HomePage,
-     CadastroPage
+     CadastroPage,
+     PagetabsPage
 
    ],
    imports: [
@@ -40,7 +41,8 @@ var config = {
    entryComponents: [
      MyApp,
      HomePage,
-     CadastroPage
+     CadastroPage,
+     PagetabsPage
    ],
    providers: [
      StatusBar,

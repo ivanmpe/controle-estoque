@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CadastroPage} from '../cadastro/cadastro';
 import { ToastController } from 'ionic-angular';
+import { PagetabsPage} from '../pagetabs/pagetabs';
+
 
 @Component({
   selector: 'page-home',
@@ -18,7 +20,7 @@ export class HomePage {
 
   presentToast() {
     let toast = this.toastCtrl.create({
-      message: 'Verifique senha e email. ',
+      message: ' Verifique senha e email. ',
       duration: 3000
     });
     toast.present();
@@ -33,7 +35,9 @@ export class HomePage {
       return;
     }
     this.afAuth.auth.signInWithEmailAndPassword(f.controls.email.value, f.controls.password.value).then(ok => {
-          this.presentToast();
+          this.navCtrl.push(PagetabsPage);
+    }).catch((error)=>{
+        this.presentToast();
     });
   }
 
