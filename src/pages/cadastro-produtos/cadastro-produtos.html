@@ -7,12 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Cadastro Produtos</ion-title>
+    <ion-title>Cadastro</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <form [formGroup] = "productForm" (ngSubmit)="form_submit()">
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" formControlName='nome' placeholder="Nome do produto"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="texto" formControlName="peso" placeholder="Peso"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="number" formControlName="preco" placeholder="Preço"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="number" formControlName="quantidade" placeholder="Quantidade"></ion-input>
+        </ion-item>
+
+      </ion-list>
+      <button ion-button full color="default" type="submit" [disabled]="!productForm.valid">Cadastrar</button>
+    </form>
 
 </ion-content>

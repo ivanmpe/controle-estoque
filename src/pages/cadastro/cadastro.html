@@ -15,20 +15,37 @@
 
 <ion-content padding>
   <form #f="ngForm" (submit)="form_cadastro(f)" >
+
   <ion-item>
     <ion-label >E-mail</ion-label>
     <ion-input type="text" value="" required ngModel name= "email"></ion-input>
   </ion-item>
+
   <ion-item>
-    <ion-label  >Senha</ion-label>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" required ngModel name="nome" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>CPF</ion-label>
+    <ion-input type="text" required ngModel name="cpf" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> RG </ion-label>
+    <ion-input type="text" required ngModel name="rg" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Telefone</ion-label>
+    <ion-input type="text" required ngModel name="telefone" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
     <ion-input type="password" required ngModel name="password" ></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label  >Repita Senha</ion-label>
-    <ion-input type="password" required ngModel name="password2" ></ion-input>
-  </ion-item>
-  <br>
-  <button ion-button full color="default"> Cadastrar </button>
-  </form>
 
+  <button type="submit" ion-button full color="default"> Cadastrar </button>
+  </form>
 </ion-content>
