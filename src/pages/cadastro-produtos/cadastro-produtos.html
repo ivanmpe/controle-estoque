@@ -6,14 +6,15 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Cadastro</ion-title>
+  <ion-navbar color="primary">
+    <ion-title> Cadastro </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="bg" padding>
+<div class="formulario">
   <form [formGroup] = "productForm" (ngSubmit)="form_submit()">
       <ion-list>
         <ion-item>
@@ -35,5 +36,5 @@
       </ion-list>
       <button ion-button full color="default" type="submit" [disabled]="!productForm.valid">Cadastrar</button>
     </form>
-
+</div>
 </ion-content>

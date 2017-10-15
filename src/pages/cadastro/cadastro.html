@@ -6,46 +6,29 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title> Cadastro </ion-title>
+  <ion-navbar color="dark">
+    <ion-title class="title"> Cadastro </ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
+<ion-content class="bg" padding>
+  <div class="formulario">
   <form #f="ngForm" (submit)="form_cadastro(f)" >
 
   <ion-item>
-    <ion-label >E-mail</ion-label>
-    <ion-input type="text" value="" required ngModel name= "email"></ion-input>
+      <ion-input type="text" placeholder="Email" required ngModel name= "email"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label>Nome</ion-label>
-    <ion-input type="text" required ngModel name="nome" ></ion-input>
+  <ion-item >
+    <ion-input type="text" placeholder="Nome" required ngModel name="nome" ></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label>CPF</ion-label>
-    <ion-input type="text" required ngModel name="cpf" ></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label> RG </ion-label>
-    <ion-input type="text" required ngModel name="rg" ></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Telefone</ion-label>
-    <ion-input type="text" required ngModel name="telefone" ></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Senha</ion-label>
-    <ion-input type="password" required ngModel name="password" ></ion-input>
+  <ion-item >
+    <ion-input type="password" placeholder="Senha" required ngModel name="password" ></ion-input>
   </ion-item>
 
   <button type="submit" ion-button full color="default"> Cadastrar </button>
   </form>
+</div>
 </ion-content>

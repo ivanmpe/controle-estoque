@@ -5,16 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Lista Produtos</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Lista </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-  <ion-list>
-    <button ion-item (click)="showAlert(p.nome, p.preco, p.quantidade, p.peso)" *ngFor="let p of produtos | async"  >
+<ion-content class="bg" padding >
+  <ion-list no-lines class="lista">
+    <button class="buttons" ion-item (click)="showAlert(p.nome, p.preco, p.quantidade, p.peso)" *ngFor="let p of produtos | async"  >
       {{ p.nome  }}
     </button>
     </ion-list>
