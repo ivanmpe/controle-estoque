@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ToastController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the CadastroProdutosPage page.
  *
@@ -28,15 +29,15 @@ export class CadastroProdutosPage {
    });
  }
 
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroProdutosPage');
   }
 
 
   form_submit() {
+    var home: HomePage;
     console.log(this.productForm.value.nome);
-    this.database.list("produtos").push(
+    this.database.list("listas/" + '1' ).push(
       {
         nome: this.productForm.value.nome,
         peso: this.productForm.value.peso,

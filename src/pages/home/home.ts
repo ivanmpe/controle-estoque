@@ -18,6 +18,8 @@ export class HomePage {
   }
 
 
+
+
   presentToast() {
     let toast = this.toastCtrl.create({
       message: ' Verifique senha e email. ',
@@ -35,6 +37,7 @@ export class HomePage {
       return;
     }
     this.afAuth.auth.signInWithEmailAndPassword(f.controls.email.value, f.controls.password.value).then(ok => {
+          //this.userId = this.afAuth.auth.currentUser.uid;
           this.navCtrl.push(PagetabsPage);
     }).catch((error)=>{
         this.presentToast();
