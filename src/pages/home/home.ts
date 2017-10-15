@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { FormsModule, NgForm } from '@angular/forms';
+import {  NgForm } from '@angular/forms';
 import { CadastroPage} from '../cadastro/cadastro';
 import { ToastController } from 'ionic-angular';
 import { PagetabsPage} from '../pagetabs/pagetabs';
