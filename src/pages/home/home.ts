@@ -5,6 +5,9 @@ import {  NgForm } from '@angular/forms';
 import { CadastroPage} from '../cadastro/cadastro';
 import { ToastController } from 'ionic-angular';
 import { PagetabsPage} from '../pagetabs/pagetabs';
+//import { ProdutoService} from '../../providers/produto/produto.service';
+
+
 
 
 @Component({
@@ -36,8 +39,10 @@ export class HomePage {
     if (!f.valid) {
       return;
     }
+
     this.afAuth.auth.signInWithEmailAndPassword(f.controls.email.value, f.controls.password.value).then(ok => {
-          //this.userId = this.afAuth.auth.currentUser.uid;
+        //  userID = this.afAuth.auth.currentUser.uid;
+        //  console.log(userID)
           this.navCtrl.push(PagetabsPage);
     }).catch((error)=>{
         this.presentToast();

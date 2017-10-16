@@ -38,13 +38,13 @@ export class CadastroPage {
         return;
       }
       this.afAuth.auth.createUserWithEmailAndPassword(f.controls.email.value, f.controls.password.value ).then(ok=> {
-        var userId =  this.afAuth.auth.currentUser.uid;
-          this.database.list("funcionarios").push({
-            nome: f.controls.nome.value,
-            cpf: f.controls.cpf.value,
-            rg: f.controls.rg.value,
-            telefone: f.controls.telefone.value,
-            id: userId
+        //var userId =  this.afAuth.auth.currentUser.uid;
+
+          this.database.list("listas/" + this.afAuth.auth.currentUser.uid).push({
+              nome: "nome",
+              peso: "1kg",
+              preco:"1.0",
+              quantidade: "1"
           });
 
           this.presentToast('Usuário cadastrado com sucesso!');

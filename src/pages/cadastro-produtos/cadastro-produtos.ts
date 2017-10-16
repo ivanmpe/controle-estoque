@@ -3,7 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ToastController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+
 /**
  * Generated class for the CadastroProdutosPage page.
  *
@@ -20,11 +20,13 @@ export class CadastroProdutosPage {
 
   private productForm: FormGroup;
  constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase,
-             public fb: FormBuilder, public toastCtrl: ToastController) {
+             public fb: FormBuilder, public toastCtrl: ToastController
+             ) {
+
    this.productForm = fb.group({
      'nome': ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-     'peso': ['', [Validators.required, Validators.min(0)]],
-     'preco': ['', [Validators.required, Validators.min(0)]],
+     'peso': ['', [Validators.required, Validators.min(1)]],
+     'preco': ['', [Validators.required, Validators.min(1)]],
      'quantidade': ['', [Validators.required, Validators.min(1)]],
    });
  }
@@ -35,9 +37,9 @@ export class CadastroProdutosPage {
 
 
   form_submit() {
-    var home: HomePage;
+
     console.log(this.productForm.value.nome);
-    this.database.list("listas/" + '1' ).push(
+    this.database.list("listas/" + "MNAswDGtoNMzL9GYtwXHkdb82VD2").push(
       {
         nome: this.productForm.value.nome,
         peso: this.productForm.value.peso,

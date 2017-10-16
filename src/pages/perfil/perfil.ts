@@ -26,9 +26,7 @@ export class PerfilPage {
 
   logout(){
     this.afAuth.auth.signOut();
-
-    this.navCtrl.viewDidLeave;
-  this.navCtrl.push(HomePage);
+    this.navCtrl.push(HomePage);
   }
 
 }

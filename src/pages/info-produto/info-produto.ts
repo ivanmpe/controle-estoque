@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {ListaPage} from '../lista/lista';
+
 /**
  * Generated class for the InfoProdutoPage page.
  *
