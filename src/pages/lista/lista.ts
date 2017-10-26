@@ -4,11 +4,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular';
 import {InfoProdutoPage} from '../info-produto/info-produto';
-import { UserIdService} from '../../providers/user-id/user-id.service';
-
-
-
-
 
 
 @IonicPage()
@@ -21,15 +16,13 @@ export class ListaPage {
     produtos: Observable<any>;
     produto: Array<string>;
 
-    constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, database : AngularFireDatabase, public userID: UserIdService) {
-      this.produtos = database.list("listas" + "MNAswDGtoNMzL9GYtwXHkdb82VD2").valueChanges();
+    constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, database : AngularFireDatabase) {
+      this.produtos = database.list("listas/" + "MNAswDGtoNMzL9GYtwXHkdb82VD2").valueChanges();
     }
 
-    user:any;
 
 
     ionViewDidLoad() {
-
       console.log('ionViewDidLoad ListaPage');
     }
 
