@@ -37,16 +37,11 @@ export class CadastroPage {
       if (!f.valid) {
         return;
       }
+      
       this.afAuth.auth.createUserWithEmailAndPassword(f.controls.email.value, f.controls.password.value ).then(ok=> {
         //var userId =  this.afAuth.auth.currentUser.uid;
 
-          this.database.list("listas/" + this.afAuth.auth.currentUser.uid).push({
-              nome: "nome",
-              peso: "1kg",
-              preco:"1.0",
-              quantidade: "1"
-          });
-
+          this.database.list("listas/").set( this.afAuth.auth.currentUser.uid, {teste: { nome: "Alimento", preco:"1.0", peso: "1kg", quantidade: "1" }} );
           this.presentToast('Usuário cadastrado com sucesso!');
           this.navCtrl.popToRoot();
 

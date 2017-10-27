@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {ProdutoService} from '../../providers/produto/produto.service';
 /**
  * Generated class for the InfoProdutoPage page.
  *
@@ -15,9 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InfoProdutoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
+public infoAlimento = {
+      nome: "",
+      peso: "",
+      preco: "",
+      quantidade: ""
+  }
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alimento: ProdutoService) {
+      this.infoAlimento = this.alimento.getAlimento();
   }
 
 

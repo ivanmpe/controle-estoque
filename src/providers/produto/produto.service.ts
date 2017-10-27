@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import 'rxjs/add/operator/map';
 
 /*
@@ -12,7 +11,24 @@ import 'rxjs/add/operator/map';
 export class ProdutoService {
 
   constructor() {
-    
+
+  }
+  private alimento = {
+      nome: "",
+      peso:"",
+      preco: "",
+      quantidade: ""
+  }
+
+  getAlimento(){
+    return this.alimento;
+  }
+
+  setAlimento(nome: string, peso: string, preco: string, quantidade: string ){
+      this.alimento.nome = nome;
+      this.alimento.peso = peso;
+      this.alimento.preco = preco;
+      this.alimento.quantidade = quantidade;
   }
 
 }

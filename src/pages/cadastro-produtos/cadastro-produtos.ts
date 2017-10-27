@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ToastController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /**
  * Generated class for the CadastroProdutosPage page.
@@ -19,8 +20,9 @@ import { ToastController } from 'ionic-angular';
 export class CadastroProdutosPage {
 
   private productForm: FormGroup;
+
  constructor(public navCtrl: NavController, public navParams: NavParams, private database: AngularFireDatabase,
-             public fb: FormBuilder, public toastCtrl: ToastController
+             public fb: FormBuilder, public toastCtrl: ToastController, public afAuth: AngularFireAuth
              ) {
 
    this.productForm = fb.group({
@@ -39,17 +41,20 @@ export class CadastroProdutosPage {
   form_submit() {
 
     console.log(this.productForm.value.nome);
-    this.database.list("listas/" + "MNAswDGtoNMzL9GYtwXHkdb82VD2").push(
-      {
-        nome: this.productForm.value.nome,
-        peso: this.productForm.value.peso,
-        preco: this.productForm.value.preco,
-        quantidade: this.productForm.value.preco,
-      }
-    ).then((t: any) => console.log('dados gravados: '+ t.key)),
-      (e: any) => console.log(e.message);
-    this.productForm.reset();
-    this.presentToast();
+    this.afAuth.authState.subscribe(data => {
+    //if (data && data.email && data.uid) {
+      //  this.produtos = database.list("listas/" + data.uid).valueChanges();
+    //}
+      this.database.list("listas/" + data.uid).push({
+          nome: this.productForm.value.nome,
+          peso: this.productForm.value.peso,
+          preco: this.productForm.value.preco,
+          quantidade: this.productForm.value.preco,
+          }).then((t: any) => console.log('dados gravados: '+ t.key)), (e: any) => console.log(e.message);
+          this.productForm.reset();
+          this.presentToast();
+      })
+
   }
 
   presentToast() {
@@ -60,11 +65,5 @@ export class CadastroProdutosPage {
     toast.present();
   }
 
-  /*8showAlert() {
-    let alert = this.alertCtrl.create({
-      title: 'Produto cadastrado com sucesso!',
-      buttons: ['OK']
-    });
-    alert.present();
-  }*/
+
 }

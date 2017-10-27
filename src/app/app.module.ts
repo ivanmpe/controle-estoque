@@ -15,7 +15,6 @@ import { CadastroPage} from '../pages/cadastro/cadastro';
 import {PagetabsPage} from '../pages/pagetabs/pagetabs';
 import {InfoProdutoPage} from '../pages/info-produto/info-produto';
 import { ProdutoService } from '../providers/produto/produto.service';
-import { UserIdService } from '../providers/user-id/user-id.service';
 
 var config = {
    apiKey: "AIzaSyBnUP7i0PHO6AhxTZ8-fPuA8M8sFZn2vt4",
@@ -56,7 +55,7 @@ var config = {
      AngularFireAuth,
      {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProdutoService,
-    UserIdService
+
    ]
  })
 export class AppModule {}
