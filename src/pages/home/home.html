@@ -3,10 +3,12 @@
 
 <ion-content padding class="bg">
   <br>
-  <img src="assets/logo.png" width="200px" class="img">
+
 
   <div class="formulario">
     <form #f="ngForm" (submit)="form_login(f)" >
+      <img src="assets/logo.png" style="display:block;width:50%;height:30%;margin-left:auto;margin-right:auto;">
+      <br>
     <ion-item>
      <ion-input class="email" placeholder="E-mail" type="text" value="" required ngModel name= "email"></ion-input>
    </ion-item>
