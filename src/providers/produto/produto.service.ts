@@ -17,7 +17,17 @@ export class ProdutoService {
       nome: "",
       peso:"",
       preco: "",
-      quantidade: ""
+      quantidade: "",
+
+  }
+
+  private alimentoKey: string;
+
+  getAlimentoKey(){
+    return this.alimentoKey;
+  }
+  setAlimentoKey( key: string){
+    this.alimentoKey = key;
   }
 
   getAlimento(){
@@ -29,6 +39,6 @@ export class ProdutoService {
       this.alimento.peso = peso;
       this.alimento.preco = preco;
       this.alimento.quantidade = quantidade;
-  }
+    }
 
 }
