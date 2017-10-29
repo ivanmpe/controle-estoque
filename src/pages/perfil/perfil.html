@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="primary">
+  <ion-navbar >
     <ion-title> Perfil </ion-title>
   </ion-navbar>
 
@@ -14,5 +14,10 @@
 
 
 <ion-content class="bg" padding>
-  <button ion-button full (click)="logout()"> Logout </button>
+    <br>
+    <br>
+    <button ion-button full  class="logout"> Gerar PDF </button>
+    <button ion-button full  class="logout"> Mudar senha </button>
+    <button ion-button full (click)="logout()" class="logout"> Logout </button>
+
 </ion-content>

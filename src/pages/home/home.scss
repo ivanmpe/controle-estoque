@@ -2,32 +2,47 @@ page-home {
 
 }
 
-.bg{
-    background-color: #353535;
-
+.background-home{
+    background-color:  #5AD2E3;
 }
+
+
+
+
 .formulario{
-    background-color: #353535;
+    background-color:#5AD2E3;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 90%;
     transform: translateY(-50%) translateX(-50%);
+    border-radius: 10px;
+  }
+  .item{
+    background-color:#5AD2E3;
+    color: black;
+  }
 
-}
-.img{
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    width: 40%;
-    transform: translateY(-50%) translateX(-50%);
-}
+
 .logon{
-    width: 100%;
-    background-color: #488aff;
+    //width: 100%;
+    background-color: white;
+    height: 25px;
+    color: #5AD2E3;
+    border-radius: 20px;
+    width: 95%;
+    //height: 25px;
+    left: 5%;
 }
 
 .register{
-    width: 100%;
-    background-color: #1a237e;
+    width: 95%;
+    height: 25px;
+    left: 5%;
+    color: white;
+    background-color: #5AD2E3;
+    border-color: white;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 20px;
 }

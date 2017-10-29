@@ -5,15 +5,14 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar color="primary">
-    <ion-title> Cadastro </ion-title>
+  <ion-navbar class="title-cadastro">
+    <ion-title > Cadastro </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content class="bg" padding>
+<ion-content class="background-home" padding>
 <div class="formulario">
   <form [formGroup] = "productForm" (ngSubmit)="form_submit()">
       <ion-list>
@@ -34,7 +33,7 @@
         </ion-item>
 
       </ion-list>
-      <button ion-button full color="default" type="submit" [disabled]="!productForm.valid">Cadastrar</button>
+      <button ion-button full color="default" type="submit" class="cadastro" [disabled]="!productForm.valid">Cadastrar</button>
     </form>
 </div>
 </ion-content>
