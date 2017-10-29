@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AlertController } from 'ionic-angular';
 import {InfoProdutoPage} from '../info-produto/info-produto';
@@ -19,6 +19,8 @@ export class ListaPage {
     produto: Array<string>;
     userid: string;
     refBD: AngularFireDatabase;
+    //refItem: AngularFireObject<any>;
+
 
     constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, database : AngularFireDatabase, public afAuth: AngularFireAuth, public alimento: ProdutoService) {
         this.refBD = database;
@@ -37,8 +39,26 @@ export class ListaPage {
 
 
     infoProduto( nome: string, peso: string, preco: string, quantidade: string) {
+    /*  this.refItem = this.refBD.object("listas/" + this.userid);
+      this.refItem.snapshotChanges().subscribe( item => {
+
+        console.log(item.key);
+        console.log(item)
+
+      });*/
+      var refItem = this.refBD.list("listas/" + this.userid);
+        refItem.snapshotChanges([])
+        .subscribe( filhos => {
+          filhos.forEach( filho => {
+            if(filho.payload.val().nome === nome){
+              this.alimento.setAlimentoKey(filho.key);
+              console.log(filho.key);
+            }
+          });
+        });
+      //console.log(chave);
+      //this.alimento.setAlimentoKey(chave);
       this.alimento.setAlimento(nome, peso, preco, quantidade);
-      //let key = this.database.list('myFirebasePath').push{key: nome }).getKey();
       this.navCtrl.push(InfoProdutoPage);
     }
 

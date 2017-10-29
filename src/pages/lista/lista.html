@@ -16,8 +16,10 @@
 
 <ion-content class="bg" >
   <ion-list no-lines class="lista">
-    <button class="buttons" ion-item (click)="infoProduto(p.nome, p.preco, p.quantidade, p.peso)" *ngFor="let p of produtos | async"  >
+    <li *ngFor="let p of produtos | async" >
+    <button class="buttons" ion-item (click)="infoProduto(p.nome, p.preco, p.quantidade, p.peso)"  >
       {{ p.nome  }}
     </button>
+  </li>
     </ion-list>
 </ion-content>

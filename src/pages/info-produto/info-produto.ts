@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AlertController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
+import { ListaPage} from '../lista/lista';
 
 
 
@@ -73,8 +74,9 @@ public infoAlimento = {
 
 
 deleteItem(){
-  var itensRef = this.refBD.list("listas/" + this.userid + this.infoAlimento);
+  var itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey());
   itensRef.remove();
+  this.navCtrl.push(ListaPage);
 }
 
 
