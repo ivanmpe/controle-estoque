@@ -27,7 +27,6 @@
     "angularfire2": "^5.0.0-rc.2",
     "cordova-android": "~6.3.0",
     "cordova-ios": "^4.5.1",
-    "cordova-pdf-generator": "file:node_modules\\cordova-pdf-generator",
     "cordova-plugin-device": "^1.1.4",
     "cordova-plugin-ionic-webview": "^1.1.15",
     "cordova-plugin-splashscreen": "^4.0.3",
@@ -57,8 +56,7 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
-      "cordova-pdf-generator": {}
+      "cordova-plugin-ionic-webview": {}
     }
   }
 }

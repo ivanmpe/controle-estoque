@@ -12,18 +12,21 @@
 
 <ion-content class="bg">
 
-  <ion-list class="itens" no-lines >
+  <ion-list class="lista">
+    <ion-item>
+        <ion-input class="itens" [ngModel]="infoAlimento.nome" >
+        </ion-input >
+    </ion-item>
+
     <ion-item class="itens">
-      {{ infoAlimento.nome }}
-    </ion-item >
-    <ion-item class="itens">
-      {{ infoAlimento.peso }}
+        <ion-input class="itens" [ngModel]="infoAlimento.peso" > </ion-input>
+    </ion-item>
+    <ion-item type="number" class="itens">
+          <ion-input class="itens" [ngModel]="infoAlimento.preco" > </ion-input>
     </ion-item>
     <ion-item class="itens">
-      {{ infoAlimento.preco }}
-    </ion-item>
-    <ion-item class="itens">
-      {{ infoAlimento.quantidade }}
+        <ion-input class="itens" [ngModel]="infoAlimento.quantidade" > </ion-input>
     </ion-item>
   </ion-list>
+  <button ion-button class="edit" > Editar Item </button>
 </ion-content>

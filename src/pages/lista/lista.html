@@ -1,4 +1,4 @@
-e<!--
+<!--
   Generated template for the ListaProdutoPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -15,11 +15,19 @@ e<!--
 </ion-header>
 
 <ion-content class="bg" >
-  <ion-list no-lines class="lista">
-    <li *ngFor="let p of produtos | async" >
-    <button class="buttons" ion-item (click)="infoProduto(p.nome, p.preco, p.quantidade, p.peso)"  >
+  <ion-list >
+
+  <ion-item-sliding *ngFor="let p of produtos | async" >
+
+    <ion-item class="buttons"  (click)="infoProduto(p.nome, p.preco, p.quantidade, p.peso)">
       {{ p.nome  }}
-    </button>
-  </li>
-    </ion-list>
+    </ion-item>
+
+   <ion-item-options side="right">
+      <button  ion-button color="danger"  >
+        Delete
+      </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
