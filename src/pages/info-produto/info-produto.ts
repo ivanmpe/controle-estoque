@@ -4,9 +4,9 @@ import {ProdutoService} from '../../providers/produto/produto.service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AlertController } from 'ionic-angular';
-import { Observable } from 'rxjs/Observable';
 import { ListaPage} from '../lista/lista';
 import { ToastController } from 'ionic-angular';
+import {  NgForm } from '@angular/forms';
 
 
 
@@ -35,6 +35,8 @@ public infoAlimento = {
 
   refBD: AngularFireDatabase;
   userid: string;
+  mudanca: boolean = false;
+
 
   constructor(public alertCtrl: AlertController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public alimento: ProdutoService, database : AngularFireDatabase, public afAuth: AngularFireAuth) {
       this.infoAlimento = this.alimento.getAlimento();
@@ -91,8 +93,44 @@ presentToast( msg: string) {
 }
 
 
-editItem(){
 
+
+  form_edit(f: NgForm) {
+    if (!f.valid) {
+      return;
+    }
+    this.editItem(f.controls.nome.value, f.controls.peso.value, f.controls.preco.value, f.controls.quantidade.value);
+  }
+
+
+
+editItem(nome: string, peso: string, preco: string, quantidade: string ){
+  var itensRef;
+//  if(nome!=null){
+    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "nome");
+    console.log(itensRef);
+    itensRef.update(nome);
+
+//  }
+//  if(peso!=null){
+    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "peso");
+    console.log(itensRef);
+    itensRef.update(peso);
+
+//  }
+//  if(preco!=null){
+    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "preco");
+    console.log(itensRef);
+    itensRef.update(preco);
+
+//  }
+//  if(quantidade=null){
+    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "quantidade");
+    itensRef.update(quantidade);
+
+//  }
+
+//update(keyRefOrSnap: string, value: T)
 }
 
 
