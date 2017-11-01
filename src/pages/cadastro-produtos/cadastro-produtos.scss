@@ -10,7 +10,9 @@ title-cadastro{
     background-color: #353535;
 }
 
-.formulario{
+.formulario-produtos{
+    background-color: white;
+    color: #5AD2E3;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,11 +20,20 @@ title-cadastro{
     transform: translateY(-50%) translateX(-50%);
 }
 
+.itens-produtos{
+    background-color: white;
+    color: #5AD2E3;
+}
+.background-produtos{
+  background-color: white;
+  color: #5AD2E3;
+}
+
 .cadastro{
     width: 95%;
     height: 25px;
     left: 5%;
-    color:  #5AD2E3;
-    background-color: white;
+    color: Black;
+    background-color:  #5AD2E3;
     border-radius: 10px;
 }
