@@ -9,28 +9,27 @@
     <ion-title> Cadastro </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding color="white">
 
-  <form [formGroup] = "productForm" (ngSubmit)="form_submit()">
-      <ion-list>
-        <ion-item>
-          <ion-input  type="text" formControlName='nome' placeholder="Nome. ex: Feijão"></ion-input>
-        </ion-item>
+    <form class="formulario-produtos" [formGroup] = "productForm" (ngSubmit)="form_submit()" >
+        <ion-list class="lista-cadastro">
 
-        <ion-item>
-          <ion-input  type="texto" formControlName="peso" placeholder="Peso. ex: 1kg"></ion-input>
-        </ion-item>
 
-        <ion-item >
-          <ion-input type="number" formControlName="preco" placeholder="Preço. ex: 3.00"></ion-input>
-        </ion-item>
 
-        <ion-item >
-          <ion-input type="number" formControlName="quantidade" placeholder="Quantidade. ex: 11"></ion-input>
-        </ion-item>
-
-      </ion-list>
-      <button ion-button full color="default" type="submit" class="cadastro" [disabled]="!productForm.valid">Cadastrar</button>
-    </form>
+          <ion-item >
+            <ion-input class="lista-cadastro" type="text" formControlName='nome' placeholder="Nome. ex: Feijão"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input  class="lista-cadastro" type="texto" formControlName="peso" placeholder="Peso. ex: 1kg"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="number"   class="lista-cadastro" formControlName="preco" placeholder="Preço. ex: 3.00"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="number"   class="lista-cadastro" formControlName="quantidade" placeholder="Quantidade. ex: 11"></ion-input>
+          </ion-item>
+        </ion-list>
+        <button ion-button full color="default" type="submit" class="cadastro" [disabled]="!productForm.valid">Cadastrar</button>
+      </form>
 
 </ion-content>

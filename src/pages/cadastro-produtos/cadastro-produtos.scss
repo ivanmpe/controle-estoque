@@ -2,17 +2,9 @@ page-cadastro-produtos {
 
 }
 
-title-cadastro{
-  background-color:  #5AD2E3;
-  color: white;
-}
-.lista{
-    background-color: #353535;
-}
 
 .formulario-produtos{
     background-color: white;
-    color: #5AD2E3;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,14 +12,16 @@ title-cadastro{
     transform: translateY(-50%) translateX(-50%);
 }
 
-.itens-produtos{
-    background-color: white;
-    color: #5AD2E3;
-}
-.background-produtos{
+.background-cadastro-produto{
   background-color: white;
   color: #5AD2E3;
 }
+
+.lista-cadastro{
+  background-color: white;
+}
+
+
 
 .cadastro{
     width: 95%;

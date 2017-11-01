@@ -6,6 +6,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AlertController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { ListaPage} from '../lista/lista';
+import { ToastController } from 'ionic-angular';
 
 
 
@@ -35,7 +36,7 @@ public infoAlimento = {
   refBD: AngularFireDatabase;
   userid: string;
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public alimento: ProdutoService, database : AngularFireDatabase, public afAuth: AngularFireAuth) {
+  constructor(public alertCtrl: AlertController, public toastCtrl: ToastController, public navCtrl: NavController, public navParams: NavParams, public alimento: ProdutoService, database : AngularFireDatabase, public afAuth: AngularFireAuth) {
       this.infoAlimento = this.alimento.getAlimento();
       this.refBD = database;
       this.afAuth.authState.subscribe( user => {
@@ -76,12 +77,23 @@ public infoAlimento = {
 deleteItem(){
   var itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey());
   itensRef.remove();
+  this.presentToast('Item removido com sucesso');
   this.navCtrl.push(ListaPage);
 }
 
 
+presentToast( msg: string) {
+  let toast = this.toastCtrl.create({
+    message: msg,
+    duration: 1000
+  });
+  toast.present();
+}
 
 
+editItem(){
+
+}
 
 
 
