@@ -14,12 +14,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="bg" >
+<ion-content class="background-lista" >
   <ion-list >
 
   <ion-item-sliding *ngFor="let p of produtos | async" >
 
-    <ion-item class="buttons"  (click)="infoProduto(p.nome, p.preco, p.quantidade, p.peso)">
+    <ion-item class="items-lista"  (click)="infoProduto(p.nome, p.preco, p.quantidade, p.peso)">
       {{ p.nome  }}
     </ion-item>
 

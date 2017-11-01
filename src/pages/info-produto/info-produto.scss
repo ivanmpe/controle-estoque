@@ -2,19 +2,30 @@ page-info-produto {
 
 }
 
-.itens{
-  color: white;
-
+.items-info{
+  color: #5AD2E3;
+  background-color: white;
 }
 
 .lista{
-  width: 90%;
+  width: 100%;
+  background-color: white;
+}
+.background-info{
+  background-color: white;
 }
 
+.label-info{
+  color: black;
+}
+
+
+
+
 .edit{
-  color:  #5AD2E3;
-  background-color: #fff;
+  color: #fff;
+  background-color: #5AD2E3;
   border-radius: 20px;
   height: 5%;
-  width: 90%;
+  width: 100%;
 }
