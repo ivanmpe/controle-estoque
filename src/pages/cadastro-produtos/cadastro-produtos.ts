@@ -49,7 +49,7 @@ export class CadastroProdutosPage {
           nome: this.productForm.value.nome,
           peso: this.productForm.value.peso,
           preco: this.productForm.value.preco,
-          quantidade: this.productForm.value.preco,
+          quantidade: this.productForm.value.quantidade,
           }).then((t: any) => console.log('dados gravados: '+ t.key)), (e: any) => console.log(e.message);
           this.productForm.reset();
           this.presentToast();

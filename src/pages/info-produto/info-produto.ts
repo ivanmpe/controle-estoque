@@ -87,7 +87,7 @@ deleteItem(){
 presentToast( msg: string) {
   let toast = this.toastCtrl.create({
     message: msg,
-    duration: 1000
+    duration: 3000
   });
   toast.present();
 }
