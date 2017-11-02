@@ -47,7 +47,7 @@ export class CadastroPage {
 
       }).catch((e)=>{
 
-        this.presentToast('Erro no cadastro.Verifique email e senha');
+        this.presentToast(e);
 
       });
 

@@ -12,10 +12,19 @@
 
 
 <ion-content class="background-perfil" padding>
-    <br>
-    <br>
-    <button ion-button full  class="logout" (click)="geraPDF()"> Gerar PDF </button>
-    <button ion-button full  class="logout"> Mudar senha </button>
-    <button ion-button full (click)="logout()" class="logout"> Logout </button>
 
+    <ion-list no-lines>
+      <!--<ion-item class="lista-perfil" >
+        <button full class="lista-perfil" (click)="geraPDF()"> Gerar PDF </button>
+      </ion-item> -->
+      <ion-item  class="lista-perfil" >
+        <button ion-button full class="lista-perfil" (click)="mudarSenha()"  > Alterar senha </button>
+      </ion-item>
+      <ion-item class="lista-perfil">
+        <button  ion-button  full class="lista-perfil"> About </button>
+      </ion-item>
+      <ion-item  class="lista-perfil" >
+        <button   ion-button full   class="lista-perfil" (click)="logout()"> Logout </button>
+      </ion-item>
+    </ion-list>
 </ion-content>

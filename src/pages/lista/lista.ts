@@ -44,7 +44,7 @@ export class ListaPage {
        setTimeout(() => {
          console.log('Async operation has ended');
          refresher.complete();
-       }, 2000);
+       }, 1000);
      }
 
     infoProduto( nome: string, peso: string, preco: string, quantidade: string) {
@@ -68,6 +68,27 @@ export class ListaPage {
       //var refBD = this.database.list("listas/" + this.userid);
       var itensRef = this.refBD.list("listas/" + this.userid);
       itensRef.remove();
+    }
+
+    deleteItem(nome: string){
+      var refItem = this.refBD.list("listas/" + this.userid);
+      refItem.snapshotChanges([])
+        .subscribe( filhos => {
+          filhos.forEach( filho => {
+            if(filho.payload.val().nome === nome){
+              var itensRef = this.refBD.list("listas/" + this.userid +  "/" +  filho.key);
+              itensRef.remove();
+              console.log(filho.key);
+            }
+          });
+        });
+      //console.log(chave);
+      //this.alimento.setAlimentoKey(chave);
+      //this.alimento.setAlimento(nome, peso, preco, quantidade);
+
+
+      //this.presentToast('Item removido com sucesso');
+      
     }
 
 

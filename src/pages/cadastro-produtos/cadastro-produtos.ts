@@ -27,9 +27,9 @@ export class CadastroProdutosPage {
 
    this.productForm = fb.group({
      'nome': ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-     'peso': ['', [Validators.required, Validators.min(1)]],
-     'preco': ['', [Validators.required, Validators.min(1)]],
-     'quantidade': ['', [Validators.required, Validators.min(1)]],
+     'peso': ['', [Validators.required, Validators.min(0.1)]],
+     'preco': ['', [Validators.required, Validators.min(0.1)]],
+     'quantidade': ['', [Validators.required, Validators.min(0.1)]],
    });
  }
 

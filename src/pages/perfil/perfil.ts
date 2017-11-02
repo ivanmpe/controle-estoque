@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 import { App} from 'ionic-angular';
-
+import { MudarSenhaPage } from '../mudar-senha/mudar-senha';
 /**
  * Generated class for the PerfilPage page.
  *
@@ -25,6 +25,10 @@ export class PerfilPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
+  }
+
+  mudarSenha(){
+    this.navCtrl.push(MudarSenhaPage);
   }
 
 
