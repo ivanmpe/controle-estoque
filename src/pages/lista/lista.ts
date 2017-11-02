@@ -6,6 +6,7 @@ import { AlertController } from 'ionic-angular';
 import {InfoProdutoPage} from '../info-produto/info-produto';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {ProdutoService} from '../../providers/produto/produto.service';
+import { ToastController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -22,7 +23,9 @@ export class ListaPage {
     //refItem: AngularFireObject<any>;
 
 
-    constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, database : AngularFireDatabase, public afAuth: AngularFireAuth, public alimento: ProdutoService) {
+    constructor(public alertCtrl: AlertController, public navCtrl: NavController,
+       public navParams: NavParams, database : AngularFireDatabase, public afAuth: AngularFireAuth,
+       public alimento: ProdutoService, public toastCtrl: ToastController) {
         this.refBD = database;
         this.afAuth.authState.subscribe( user => {
               this.userid = user.uid;
@@ -46,6 +49,12 @@ export class ListaPage {
          refresher.complete();
        }, 1000);
      }
+
+
+
+
+
+
 
     infoProduto( nome: string, peso: string, preco: string, quantidade: string) {
       var refItem = this.refBD.list("listas/" + this.userid);
@@ -78,6 +87,7 @@ export class ListaPage {
             if(filho.payload.val().nome === nome){
               var itensRef = this.refBD.list("listas/" + this.userid +  "/" +  filho.key);
               itensRef.remove();
+              this.presentToast('Item successfully removed!')
               console.log(filho.key);
             }
           });
@@ -88,23 +98,30 @@ export class ListaPage {
 
 
       //this.presentToast('Item removido com sucesso');
-      
+
     }
 
+    presentToast( msg: string) {
+      let toast = this.toastCtrl.create({
+        message: msg,
+        duration: 3000
+      });
+      toast.present();
+    }
 
     showConfirm() {
         let confirm = this.alertCtrl.create({
-          title: 'Deletar tudo?',
-            message: 'Você deseja deletar todos os produtos da lista? ',
+          title: 'Delete All',
+            message: 'Do you want to delete all products from the list? ',
               buttons: [
                 {
-                  text: 'Discordo',
+                  text: 'Disagree',
                   handler: () => {
                     console.log('Disagree clicked');
                   }
                 },
                 {
-                  text: 'Concordo',
+                  text: 'Agree',
                   handler: () => {
                     this.deleteAll();
                     console.log('Agree clicked');

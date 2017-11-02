@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="tab">
-    <ion-title> Perfil </ion-title>
+    <ion-title> Profile </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -17,14 +17,14 @@
       <!--<ion-item class="lista-perfil" >
         <button full class="lista-perfil" (click)="geraPDF()"> Gerar PDF </button>
       </ion-item> -->
-      <ion-item  class="lista-perfil" >
-        <button ion-button full class="lista-perfil" (click)="mudarSenha()"  > Alterar senha </button>
+      <ion-item class="lista-perfil" >
+        <button ion-icon ion-button full class="lista-perfil" (click)="mudarSenha()"  > <strong> Change Password  </strong></button>
       </ion-item>
       <ion-item class="lista-perfil">
-        <button  ion-button  full class="lista-perfil"> About </button>
+        <button  ion-button  full class="lista-perfil" (click)="about()"> <strong> About  </strong></button>
       </ion-item>
       <ion-item  class="lista-perfil" >
-        <button   ion-button full   class="lista-perfil" (click)="logout()"> Logout </button>
+        <button   ion-button full   class="lista-perfil" (click)="logout()">  <strong> Logout  </strong></button>
       </ion-item>
     </ion-list>
 </ion-content>

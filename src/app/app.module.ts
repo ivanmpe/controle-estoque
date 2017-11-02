@@ -16,6 +16,8 @@ import {PagetabsPage} from '../pages/pagetabs/pagetabs';
 import {InfoProdutoPage} from '../pages/info-produto/info-produto';
 import { ProdutoService } from '../providers/produto/produto.service';
 import { MudarSenhaPage} from '../pages/mudar-senha/mudar-senha';
+import { AboutPage} from '../pages/about/about';
+
 
 var config = {
    apiKey: "AIzaSyBnUP7i0PHO6AhxTZ8-fPuA8M8sFZn2vt4",
@@ -33,7 +35,8 @@ var config = {
      CadastroPage,
      PagetabsPage,
      InfoProdutoPage,
-     MudarSenhaPage
+     MudarSenhaPage,
+     AboutPage
 
    ],
    imports: [
@@ -49,7 +52,8 @@ var config = {
      CadastroPage,
      PagetabsPage,
      InfoProdutoPage,
-     MudarSenhaPage
+     MudarSenhaPage,
+     AboutPage
    ],
    providers: [
      StatusBar,

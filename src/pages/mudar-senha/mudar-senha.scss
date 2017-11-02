@@ -1,4 +1,13 @@
 page-mudar-senha {
+  *::-webkit-input-placeholder {
+    color: gray !important;
+  }
+  *:-moz-placeholder {
+    color: gray !important;
+  }
+  *:-ms-input-placeholder { /* IE10+ */
+    color: gray !important;
+  }
 
 }
 
@@ -6,8 +15,6 @@ page-mudar-senha {
 .lista-muda-senha{
   background-color: white;
   text-align: right;
-
-
 }
 
 .alteraSenha{

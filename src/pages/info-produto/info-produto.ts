@@ -53,17 +53,17 @@ public infoAlimento = {
 
   showConfirmDeleteItem() {
       let confirm = this.alertCtrl.create({
-        title: 'Deletar Item',
-        message: 'Você deseja deletar esse produto da sua lista? ',
+        title: 'Delete Item',
+        message: 'Do you want to delete this product from your list? ',
         buttons: [
           {
-            text: 'Discordo',
+            text: 'Disagree',
             handler: () => {
               console.log('Disagree clicked');
             }
           },
           {
-            text: 'Concordo',
+            text: 'Agre',
             handler: () => {
               this.deleteItem();
               console.log('Agree clicked');
@@ -79,7 +79,7 @@ public infoAlimento = {
 deleteItem(){
   var itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey());
   itensRef.remove();
-  this.presentToast('Item removido com sucesso');
+  this.presentToast('Item successfully removed!');
   this.navCtrl.push(ListaPage);
 }
 
@@ -112,7 +112,7 @@ editItem(nome: string, peso: string, preco: string, quantidade: string ){
     itensRef.update({ peso : peso});
     itensRef.update({ preco : preco});
     itensRef.update({ quantidade : quantidade});
-    this.presentToast(" Atualizado com sucesso! ");
+    this.presentToast("Item successfully updated. ");
     this.alimento.setAlimento(nome, peso, preco, quantidade);
     this.navCtrl.push(ListaPage);
 

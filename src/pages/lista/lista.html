@@ -28,7 +28,7 @@
   <ion-item-sliding *ngFor="let p of produtos | async" >
 
     <ion-item class="items-lista"  (click)="infoProduto(p.nome, p.peso, p.preco, p.quantidade)">
-      {{ p.nome  }}
+    <strong>  {{ p.nome  }} </strong>
     </ion-item>
    <ion-item-options side="right">
       <button  ion-button color="danger" (click)="deleteItem(p.nome)" > Delete </button>

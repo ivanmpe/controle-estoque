@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { HomePage } from '../home/home';
 import { App} from 'ionic-angular';
 import { MudarSenhaPage } from '../mudar-senha/mudar-senha';
+import { AboutPage } from '../about/about';
 /**
  * Generated class for the PerfilPage page.
  *
@@ -30,7 +31,9 @@ export class PerfilPage {
   mudarSenha(){
     this.navCtrl.push(MudarSenhaPage);
   }
-
+  about(){
+      this.navCtrl.push(AboutPage);
+  }
 
 
   geraPDF(){
