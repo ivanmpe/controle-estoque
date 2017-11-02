@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="tab">
-    <ion-title> Lista de Produtos </ion-title>
+    <ion-title> List of Products </ion-title>
       <ion-buttons end>
       <button ion-button (click)="showConfirm()" > <ion-icon name="trash" color="danger"></ion-icon>
        </button>
@@ -15,11 +15,19 @@
 </ion-header>
 
 <ion-content class="background-lista" >
+
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+
   <ion-list >
 
   <ion-item-sliding *ngFor="let p of produtos | async" >
 
-    <ion-item class="items-lista"  (click)="infoProduto(p.nome, p.preco, p.quantidade, p.peso)">
+    <ion-item class="items-lista"  (click)="infoProduto(p.nome, p.peso, p.preco, p.quantidade)">
       {{ p.nome  }}
     </ion-item>
 

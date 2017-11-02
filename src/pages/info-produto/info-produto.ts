@@ -98,39 +98,24 @@ presentToast( msg: string) {
   form_edit(f: NgForm) {
     if (!f.valid) {
       return;
-    }
+    } console.log(f.controls.nome.value, f.controls.peso.value, f.controls.preco.value, f.controls.quantidade.value)
     this.editItem(f.controls.nome.value, f.controls.peso.value, f.controls.preco.value, f.controls.quantidade.value);
   }
 
 
 
 editItem(nome: string, peso: string, preco: string, quantidade: string ){
-  var itensRef;
-//  if(nome!=null){
-    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "nome");
-    console.log(itensRef);
-    itensRef.update(nome);
 
-//  }
-//  if(peso!=null){
-    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "peso");
-    console.log(itensRef);
-    itensRef.update(peso);
+    var itensRef;
+    itensRef = this.refBD.object("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey());
+    itensRef.update({ nome : nome});
+    itensRef.update({ peso : peso});
+    itensRef.update({ preco : preco});
+    itensRef.update({ quantidade : quantidade});
+    this.presentToast(" Atualizado com sucesso! ");
+    this.alimento.setAlimento(nome, peso, preco, quantidade);
+    this.navCtrl.push(ListaPage);
 
-//  }
-//  if(preco!=null){
-    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "preco");
-    console.log(itensRef);
-    itensRef.update(preco);
-
-//  }
-//  if(quantidade=null){
-    itensRef = this.refBD.list("listas/" + this.userid +  "/" +  this.alimento.getAlimentoKey() + "/" + "quantidade");
-    itensRef.update(quantidade);
-
-//  }
-
-//update(keyRefOrSnap: string, value: T)
 }
 
 

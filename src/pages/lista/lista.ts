@@ -38,16 +38,18 @@ export class ListaPage {
     }
 
 
+    doRefresh(refresher) {
+       console.log('Begin async operation', refresher);
+
+       setTimeout(() => {
+         console.log('Async operation has ended');
+         refresher.complete();
+       }, 2000);
+     }
+
     infoProduto( nome: string, peso: string, preco: string, quantidade: string) {
-    /*  this.refItem = this.refBD.object("listas/" + this.userid);
-      this.refItem.snapshotChanges().subscribe( item => {
-
-        console.log(item.key);
-        console.log(item)
-
-      });*/
       var refItem = this.refBD.list("listas/" + this.userid);
-        refItem.snapshotChanges([])
+      refItem.snapshotChanges([])
         .subscribe( filhos => {
           filhos.forEach( filho => {
             if(filho.payload.val().nome === nome){
@@ -69,10 +71,10 @@ export class ListaPage {
     }
 
 
-        showConfirm() {
-            let confirm = this.alertCtrl.create({
-              title: 'Deletar tudo?',
-              message: 'Você deseja deletar todos os produtos da lista? ',
+    showConfirm() {
+        let confirm = this.alertCtrl.create({
+          title: 'Deletar tudo?',
+            message: 'Você deseja deletar todos os produtos da lista? ',
               buttons: [
                 {
                   text: 'Discordo',
@@ -90,13 +92,10 @@ export class ListaPage {
               ]
             });
             confirm.present();
-          }
+      }
 
 
 
-    getProduto(){
-      return this.produto;
-    }
 
 
 }
