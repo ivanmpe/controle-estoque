@@ -52,14 +52,14 @@ export class CadastroProdutosPage {
           quantidade: this.productForm.value.quantidade,
           }).then((t: any) => console.log('dados gravados: '+ t.key)), (e: any) => console.log(e.message);
           this.productForm.reset();
-          this.presentToast();
+          this.toast();
       })
 
   }
 
-  presentToast() {
+  toast() {
     let toast = this.toastCtrl.create({
-      message: 'Produto cadastrado com sucesso! ',
+      message: 'Product succesfully registered. ',
       duration: 1000
     });
     toast.present();

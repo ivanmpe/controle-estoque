@@ -87,7 +87,7 @@ export class ListaPage {
             if(filho.payload.val().nome === nome){
               var itensRef = this.refBD.list("listas/" + this.userid +  "/" +  filho.key);
               itensRef.remove();
-              this.presentToast('Item successfully removed!')
+            //this.presentToast('Item successfully removed!')
               console.log(filho.key);
             }
           });
