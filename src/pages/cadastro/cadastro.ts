@@ -41,9 +41,10 @@ export class CadastroPage {
       this.afAuth.auth.createUserWithEmailAndPassword(f.controls.email.value, f.controls.password.value ).then(ok=> {
         //var userId =  this.afAuth.auth.currentUser.uid;
 
-          this.database.list("listas/").set( this.afAuth.auth.currentUser.uid, {teste: { nome: "Nome Produto", preco:"0.0", peso: "0kg", quantidade: "0" }} );
-          this.presentToast('Usuário cadastrado com sucesso!');
-          this.navCtrl.popToRoot();
+          this.database.list("listas/").set( this.afAuth.auth.currentUser.uid, {
+            teste: { nome: "Nome Produto", preco:"0.0", peso: "0kg", quantidade: "0" }} );
+            this.presentToast('Usuário cadastrado com sucesso!');
+            this.navCtrl.popToRoot();
 
       }).catch((e)=>{
 
