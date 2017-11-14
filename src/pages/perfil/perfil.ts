@@ -5,6 +5,16 @@ import { HomePage } from '../home/home';
 import { App} from 'ionic-angular';
 import { MudarSenhaPage } from '../mudar-senha/mudar-senha';
 import { AboutPage } from '../about/about';
+//import * as pdfmake from 'pdfmake';
+//import * as pdfmake from 'pdfmake';
+import * as pdfmake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+
+
+
+
+
+
 /**
  * Generated class for the PerfilPage page.
  *
@@ -37,22 +47,8 @@ export class PerfilPage {
 
 
   geraPDF(){
-    const before = Date.now();
-
-           document.addEventListener('deviceready', () => {
-               console.log('DEVICE READY FIRED AFTER', (Date.now() - before), 'ms');
-
-               //generate the pdf.
-               this.cordova.plugins.pdf.htmlToPDF({
-                       data: "<html> <h1>  Hello World  </h1> </html>",
-                       //url: "www.cloud.org/template.html"
-                   },
-                   (sucess) => console.log('sucess: ', sucess),
-                   (error) => console.log('error:', error));
-           });
-
-
-
+    var dd = { content: 'This is an sample PDF printed with pdfMake' };
+    pdfmake.createPdf(dd).download();
   }
 
 

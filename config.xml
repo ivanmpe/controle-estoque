@@ -84,4 +84,5 @@
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.15" />
     <plugin name="cordova-pdf-generator" spec="file:node_modules\cordova-pdf-generator" />
+    <plugin name="cordova-plugin-file" spec="^4.3.3" />
 </widget>

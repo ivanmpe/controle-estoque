@@ -13,18 +13,19 @@
 
 <ion-content class="background-perfil" padding>
 
-    <ion-list no-lines>
+    <ion-list >
       <!--<ion-item class="lista-perfil" >
         <button full class="lista-perfil" (click)="geraPDF()"> Gerar PDF </button>
       </ion-item> -->
       <ion-item class="lista-perfil" >
-        <button ion-icon ion-button full class="lista-perfil" (click)="mudarSenha()"  > <strong> Change Password  </strong></button>
+        <button   class="lista-perfil" (click)="mudarSenha()"  > <strong> Change Password  </strong></button>
       </ion-item>
       <ion-item class="lista-perfil">
-        <button  ion-button  full class="lista-perfil" (click)="about()"> <strong> About  </strong></button>
+        <button class="lista-perfil" (click)="about()"> <strong> About  </strong></button>
       </ion-item>
+    
       <ion-item  class="lista-perfil" >
-        <button   ion-button full   class="lista-perfil" (click)="logout()">  <strong> Logout  </strong></button>
+        <button   class="lista-perfil" (click)="logout()">  <strong> Logout  </strong></button>
       </ion-item>
     </ion-list>
 </ion-content>

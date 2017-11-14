@@ -17,6 +17,7 @@ import {InfoProdutoPage} from '../pages/info-produto/info-produto';
 import { ProdutoService } from '../providers/produto/produto.service';
 import { MudarSenhaPage} from '../pages/mudar-senha/mudar-senha';
 import { AboutPage} from '../pages/about/about';
+import { File } from '@ionic-native/file';
 
 
 var config = {
@@ -59,6 +60,7 @@ var config = {
      StatusBar,
      SplashScreen,
      AngularFireDatabase,
+     File,
      AngularFireAuth,
      {provide: ErrorHandler, useClass: IonicErrorHandler},
     ProdutoService,
