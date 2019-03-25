@@ -7,8 +7,13 @@
 	  <li> Ionic 3 </li>
 	  <li> Firebase Database </li>
   	<li> Firebase Authetication</li>
-
 </ul>
-
+<br>
 <h2>Objetivos</h2>
 <p>O aplicativo tem por objetivo listagem de produtos, partindo da premissa em que pessoas que têm listas de compras tendem a controlar melhor os impulsos de consumo porque o ato de comprar já estava previamente registrado e pensado.  </p>
+<br>
+<h2>Plataformas</h2>
+<ul>
+	  <li> Android </li>
+	  <li> iOs </li>
+</ul>
