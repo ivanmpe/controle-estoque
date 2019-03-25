@@ -11,4 +11,4 @@
 </ul>
 
 <h2>Objetivos</h2>
-<p>O aplicativo tem por objetivo de listar produtos, partindo da premissa em que pessoas que têm listas de compras tendem a controlar melhor os impulsos de consumo porque o ato de comprar já estava previamente registrado e pensado.  </p>
+<p>O aplicativo tem por objetivo listagem de produtos, partindo da premissa em que pessoas que têm listas de compras tendem a controlar melhor os impulsos de consumo porque o ato de comprar já estava previamente registrado e pensado.  </p>
